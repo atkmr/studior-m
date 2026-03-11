@@ -38,7 +38,6 @@
     .right-panel { padding: 80px 64px 80px 80px; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-start; }
 
     /* MOBILE logo strip — hidden on desktop */
-    .mobile-logo { display: none; }
 
     /* TYPOGRAPHY */
     .page-title { font-family: var(--font); font-size: clamp(48px, 7vw, 88px); font-weight: 300; letter-spacing: 0.06em; color: var(--light-gray); line-height: 1; margin-bottom: 52px; text-align: center; }
@@ -58,20 +57,7 @@
     /* MOBILE */
     @media (max-width: 900px) {
       .left-panel { display: none; }
-      .mobile-logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 72px 20px 16px;
-        border-bottom: 1px solid #e0ddd8;
-      }
-      .mobile-logo img {
-        height: 72px;
-        width: auto;
-        object-fit: contain;
-        filter: grayscale(100%) contrast(1.05);
-        opacity: 0.92;
-      }
+      body { padding-top: 68px; }
       .split { display: block; }
       .right-panel { padding: 24px 24px 40px; }
       .page-title { font-size: clamp(28px, 8vw, 40px); margin-bottom: 24px; }
@@ -100,9 +86,6 @@
 </div>
 
 <!-- MOBILE LOGO STRIP (visible only on mobile) -->
-<div class="mobile-logo">
-  <img src="studior-m.jpg" alt="Studio R—M" onerror="this.style.display='none'">
-</div>
 
 <div class="split">
   <!-- IMAGE LEFT (desktop only) -->

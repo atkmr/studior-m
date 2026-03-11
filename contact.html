@@ -30,7 +30,6 @@
     .left-panel { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; border-right: 1px solid #e0ddd8; overflow: hidden; background: var(--white); padding: 48px; }
     .left-panel img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.05); opacity: 0.92; }
     .right-panel { padding: 120px 64px 80px 80px; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-start; }
-    .mobile-logo { display: none; }
     .section-title { font-family: var(--font); font-size: clamp(28px, 3.5vw, 40px); font-weight: 300; letter-spacing: 0.12em; color: var(--light-gray); margin-bottom: 40px; }
     p + p { margin-top: 18px; }
     a.email-link { color: var(--dark); text-decoration: underline; text-underline-offset: 3px; }
@@ -40,8 +39,7 @@
     .fade-in:nth-child(2) { animation-delay: 0.1s; }
     @media (max-width: 900px) {
       .left-panel { display: none; }
-      .mobile-logo { display: flex; justify-content: center; align-items: center; padding: 72px 20px 16px; border-bottom: 1px solid #e0ddd8; }
-      .mobile-logo img { height: 72px; width: auto; object-fit: contain; filter: grayscale(100%) contrast(1.05); opacity: 0.92; }
+      body { padding-top: 68px; }
       .split { display: block; }
       .right-panel { padding: 24px 24px 40px; }
     }
@@ -66,9 +64,6 @@
   </div>
 </div>
 
-<div class="mobile-logo">
-  <img src="studior-m.jpg" alt="Studio R—M" onerror="this.style.display='none'">
-</div>
 
 <div class="split">
   <div class="left-panel">
@@ -77,7 +72,7 @@
   <div class="right-panel">
     <h2 class="section-title fade-in">CONTACT US</h2>
     <div class="contact-content fade-in">
-      <p>More questions? Contact us at <a class="email-link" href="mailto:studiorminquiries@gmail.com">studiorminquiries@gmail.com</a>.</p>
+      <p>More questions? Contact us at <a class="email-link" href="/cdn-cgi/l/email-protection#37444342535e58455a5e5946425e455e524477505a565e5b1954585a"><span class="__cf_email__" data-cfemail="87f4f3f2e3eee8f5eaeee9f6f2eef5eee2f4c7e0eae6eeeba9e4e8ea">[email&#160;protected]</span></a>.</p>
       <p>We typically respond within 1–3 business days.</p>
     </div>
   </div>
@@ -100,7 +95,7 @@
   </svg>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function openMenu() { document.getElementById('menuPanel').classList.add('open'); document.getElementById('overlay').classList.add('visible'); }
   function closeMenu() { document.getElementById('menuPanel').classList.remove('open'); document.getElementById('overlay').classList.remove('visible'); }
   var cursor = document.getElementById('cursor');
@@ -108,9 +103,4 @@
   var xmark = document.getElementById('cursor-x');
   document.addEventListener('mousemove', function(e) { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
   document.querySelectorAll('a, button').forEach(function(el) {
-    el.addEventListener('mouseenter', function() { cross.style.display = 'none'; xmark.style.display = 'block'; cursor.style.transform = 'translate(-12px,-12px) scale(1.3)'; });
-    el.addEventListener('mouseleave', function() { cross.style.display = 'block'; xmark.style.display = 'none'; cursor.style.transform = 'translate(-12px,-12px) scale(1)'; });
-  });
-</script>
-</body>
-</html>
+    el.addEventListener('mouseenter', function() { cross.style.display = 'none'; xmark.style.display = 'block'; cursor.style.tr
