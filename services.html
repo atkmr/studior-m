@@ -12,17 +12,11 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Times New Roman', Times, serif; cursor: none; background: var(--white); color: var(--dark); font-size: 17px; line-height: 1.65; overflow-x: hidden; }
     a, button { cursor: none; }
-
-    /* CURSOR */
     #cursor { position: fixed; pointer-events: none; z-index: 9999; transform: translate(-12px,-12px); transition: transform 0.1s ease; }
-    .ink-drop { position: fixed; width: 3px; height: 3px; background: #1a1916; pointer-events: none; z-index: 9990; animation: inkFade 0.9s ease forwards; }
-    @keyframes inkFade { 0% { opacity: 0.45; transform: scale(1) rotate(0deg); } 100% { opacity: 0; transform: scale(0.4) rotate(15deg); } }
-
-    /* NAV */
-    nav { position: fixed; top: 0; right: 0; z-index: 100; padding: 22px 28px; }
+    nav { position: fixed; top: 0; right: 0; z-index: 9000; padding: 22px 28px; }
     .hamburger { cursor: none; background: none; border: none; display: flex; flex-direction: column; gap: 5px; padding: 4px; }
     .hamburger span { display: block; width: 26px; height: 1.5px; background: var(--dark); transition: all 0.3s ease; }
-    .menu-panel { position: fixed; top: 0; right: -300px; width: 260px; height: 100vh; background: var(--white); box-shadow: -4px 0 30px rgba(0,0,0,0.08); z-index: 200; transition: right 0.4s cubic-bezier(0.77,0,0.175,1); display: flex; flex-direction: column; padding: 28px 32px; }
+    .menu-panel { position: fixed; top: 0; right: -300px; width: 260px; height: 100vh; background: var(--white); box-shadow: -4px 0 30px rgba(0,0,0,0.08); z-index: 9500; transition: right 0.4s cubic-bezier(0.77,0,0.175,1); display: flex; flex-direction: column; padding: 28px 32px; }
     .menu-panel.open { right: 0; }
     .menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--light-gray); }
     .menu-header span { font-size: 13px; letter-spacing: 0.12em; color: var(--mid-gray); }
@@ -30,22 +24,16 @@
     .menu-links { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
     .menu-links a { font-family: var(--font); font-size: 28px; font-weight: 300; letter-spacing: 0.06em; color: var(--dark); text-decoration: none; padding: 6px 0; transition: color 0.2s; }
     .menu-links a:hover { color: var(--mid-gray); }
-    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.2); z-index: 150; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.2); z-index: 8000; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
     .overlay.visible { opacity: 1; pointer-events: all; }
-
-    /* LAYOUT */
-    .split { display: grid; grid-template-columns: 2fr 3fr; min-height: 100vh; }
-    .left-panel { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; border-right: 1px solid #e0ddd8; overflow: hidden; background: var(--white); padding: 48px; }
+    .split { display: grid; grid-template-columns: 3fr 2fr; min-height: 100vh; }
+    .left-panel { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; border-left: 1px solid #e0ddd8; overflow: hidden; background: var(--white); padding: 48px; }
     .left-panel img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.05); opacity: 0.92; }
     .right-panel { padding: 80px 64px 80px 80px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-
-    /* TYPOGRAPHY */
     .section-title { font-family: var(--font); font-size: clamp(28px, 3.5vw, 40px); font-weight: 300; letter-spacing: 0.12em; color: var(--light-gray); margin-bottom: 40px; }
     p + p { margin-top: 18px; }
     em { font-style: italic; }
     a.email-link { color: var(--dark); text-decoration: underline; text-underline-offset: 3px; }
-
-    /* SERVICES */
     .service-block { margin-bottom: 36px; }
     .service-title { font-size: 18px; font-weight: 500; font-style: italic; margin-bottom: 12px; }
     .service-desc { margin-bottom: 24px; }
@@ -56,18 +44,16 @@
     li { margin-bottom: 4px; font-size: 16px; }
     hr { border: none; border-top: 1px solid #ddd; margin: 36px 0; }
     .get-started h3 { font-size: 18px; font-weight: 500; font-style: italic; margin-bottom: 12px; }
-
-    /* ANIMATIONS */
     .fade-in { animation: fadeUp 0.7s ease both; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
     .fade-in:nth-child(2) { animation-delay: 0.1s; }
     .fade-in:nth-child(3) { animation-delay: 0.2s; }
     .fade-in:nth-child(4) { animation-delay: 0.3s; }
-
     @media (max-width: 900px) {
       .split { grid-template-columns: 1fr; }
-      .left-panel { position: relative; height: 50vw; min-height: 260px; border-right: none; border-bottom: 1px solid #e0ddd8; padding: 24px; }
-      .right-panel { padding: 40px 28px; }
+      .left-panel { position: relative; height: auto; border-right: none; border-top: 1px solid #e0ddd8; padding: 24px; }
+      .left-panel img { width: auto; height: auto; max-height: 60vw; object-fit: contain; margin: 0 auto; display: block; }
+      .right-panel { padding: 60px 24px 40px; }
       .three-col { grid-template-columns: 1fr; gap: 24px; }
       .manuscript-grid { grid-template-columns: 1fr; }
     }
@@ -89,12 +75,8 @@
 </div>
 
 <div class="split">
-  <div class="left-panel">
-    <img src="studior-m.jpg" alt="Studio R—M" onerror="this.style.display='none'">
-  </div>
-  <div class="right-panel">
+<div class="right-panel">
     <h2 class="section-title fade-in">SERVICES</h2>
-
     <div class="service-block fade-in">
       <p class="service-title"><em>1. Developmental Editing — See below for pricing</em></p>
       <p class="service-desc">Includes three full editorial reads, three editorial letters, revision guidance, consultation calls, and availability for questions throughout the revision process. Pricing reflects sustained editorial involvement over time.</p>
@@ -133,9 +115,7 @@
         </div>
       </div>
     </div>
-
     <hr>
-
     <div class="service-block fade-in">
       <p class="service-title"><em>2. Manuscript Consultation — Pricing upon request</em></p>
       <div class="manuscript-grid">
@@ -145,9 +125,7 @@
         <p style="font-size:15px; color:var(--mid-gray);">60-minute call +<br>written follow-up notes</p>
       </div>
     </div>
-
     <hr>
-
     <div class="get-started fade-in">
       <h3>How To Get Started</h3>
       <div class="manuscript-grid">
@@ -191,27 +169,13 @@
     document.getElementById('menuPanel').classList.remove('open');
     document.getElementById('overlay').classList.remove('visible');
   }
-
-  const cursor = document.getElementById('cursor');
-  const cross  = document.getElementById('cursor-cross');
-  const xmark  = document.getElementById('cursor-x');
-  let lastDrop = 0;
-
+  var cursor = document.getElementById('cursor');
+  var cross  = document.getElementById('cursor-cross');
+  var xmark  = document.getElementById('cursor-x');
   document.addEventListener('mousemove', function(e) {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top  = e.clientY + 'px';
-    var now = Date.now();
-    if (now - lastDrop > 80) {
-      lastDrop = now;
-      var d = document.createElement('div');
-      d.className = 'ink-drop';
-      d.style.left = (e.clientX - 1.5) + 'px';
-      d.style.top  = (e.clientY - 1.5) + 'px';
-      document.body.appendChild(d);
-      setTimeout(function() { d.remove(); }, 900);
-    }
   });
-
   document.querySelectorAll('a, button').forEach(function(el) {
     el.addEventListener('mouseenter', function() {
       cross.style.display = 'none';
